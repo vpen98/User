@@ -1,0 +1,24 @@
+<!--base.html-->
+<!--网站的基本模板，提供网站的主要设计-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=devic-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="../../static/css/base.css" rel="stylesheet">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+
+            {% block head %} {% endblock %}
+            {% block menu %} {% endblock %}
+            {% block content %} {% endblock %}
+            {% block postcomment  %} {% endblock %}
+            {% block comment  %} {% endblock %}
+            {% block footer  %} {% endblock %}
+            {% include 'footer.html' %}
+
+</body>
+</html>

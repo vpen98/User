@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Account Info</h2>
+<ul>
+    <li>Username: {{ user.username }} </li>
+    <li>Email: {{ user.email }} </li>
+
+</ul>
+<h2>Update My Profile</h2>
+   <form method="post" action="" enctype="multipart/form-data">
+      {% csrf_token %}
+      {% for field in form %}
+
+        {{ field.errors }}
+        {{ field.label_tag }} {{ field }}
+        {% if field.help_text %}
+      <p>{{ field.help_text|safe }}</p>
+        {% endif %}
+
+        {% endfor %}
+ 
+         <input type="submit" value="更新" />
+
+   </form>
+
+
+ 
+      <a href="{% url 'users:pwd_change' user.id %}">修改密码</a>
+
+{% endblock %}
